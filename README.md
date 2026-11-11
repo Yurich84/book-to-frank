@@ -6,21 +6,33 @@
 
 ### Install from this repository
 
-After the project is published on GitHub, replace `<repository-url>` with its clone URL:
+Install the skill for your user account by cloning the repository into Codex's global skills folder:
 
 ```sh
-git clone https://github.com/Yurich84/book-to-frank.git "$HOME/.codex/skills/book-to-frank"
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
+git clone https://github.com/Yurich84/book-to-frank.git "${CODEX_HOME:-$HOME/.codex}/skills/book-to-frank"
 ```
 
-If you already cloned this repository elsewhere, copy its `SKILL.md` into `~/.codex/skills/book-to-frank/`. Restart or refresh Codex if the new skill does not appear.
+If `CODEX_HOME` is set, Codex uses that directory instead of `~/.codex`.
 
 ### Manual install
 
-Create `~/.codex/skills/book-to-frank/` and copy the repository's `SKILL.md` there:
+From the repository root, copy `SKILL.md` into the user-level skills folder:
 
-```text
-~/.codex/skills/book-to-frank/SKILL.md
+```sh
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills/book-to-frank"
+cp SKILL.md "${CODEX_HOME:-$HOME/.codex}/skills/book-to-frank/SKILL.md"
 ```
+
+## Update the global install
+
+If you installed by cloning the repository, update it from a terminal with:
+
+```sh
+git -C "${CODEX_HOME:-$HOME/.codex}/skills/book-to-frank" pull --ff-only origin main
+```
+
+If you installed manually, copy the newer `SKILL.md` over the installed file. Codex detects skill changes automatically; restart Codex if the updated version does not appear.
 
 ## Use
 
