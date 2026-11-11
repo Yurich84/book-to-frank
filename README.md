@@ -30,7 +30,7 @@ Invoke the skill with a link to an accessible book or attach the book file:
 $book-to-frank https://example.com/book
 ```
 
-The skill asks how to pair source and translation (3–5 words, 5–10 words, sentences, or paragraphs), the target language, and the output format (EPUB, Markdown, or PDF). It then prepares ordered section files, processes each section with a separate agent when delegation is available, and assembles the final book. If the source has no title page, it requests one before generating the final output.
+The skill offers selectable choices for pairing size (3–5 words, 5–10 words, sentences, or paragraphs), target language, and output format (EPUB, Markdown, or PDF) when the chat interface supports them. Otherwise, it presents a compact numbered menu. It then prepares ordered section files, processes each section with a separate agent when delegation is available, and assembles the final book. If the source has no title page, it requests one before generating the final output.
 
 ## Workflow notes
 

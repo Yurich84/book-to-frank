@@ -9,13 +9,13 @@ Turn the supplied book into a parallel-reading edition: each original passage is
 
 ## Start with the user's choices
 
-Use the supplied link or attachment as the source. Check that it is accessible and identify its language, title page, main text, and available structure. Ask the user these questions before processing:
+Use the supplied link or attachment as the source. Check that it is accessible and identify its language, title page, main text, and available structure. Collect these three choices before processing:
 
-1. **How should the text and translation be paired?** Offer: groups of 3–5 words, groups of 5–10 words, sentence by sentence, or paragraph by paragraph. Explain that each translation will follow its matching original passage.
-2. **Which language should the book be translated into?** Suggest the language the user usually writes in during the conversation, when that is clear; let them choose another.
-3. **What output format do you want?** EPUB, Markdown, or PDF.
+1. **Pairing:** 3–5 words, 5–10 words, sentence by sentence, or paragraph by paragraph.
+2. **Translation language:** suggest the language the user usually writes in during the conversation, when clear; allow another language.
+3. **Output:** EPUB, Markdown, or PDF.
 
-Ask all unanswered questions together. Carry forward choices the user has already given rather than asking again.
+Present unanswered choices together in one compact interaction. Use the environment's structured choice UI (for example, selectable options with a free-text choice) when available. Make each pairing and output option directly selectable. For language, offer the suggested language and a way to enter another. If no choice UI is available, show a numbered menu and let the user answer in one line, such as `1) sentence 2) Ukrainian 3) EPUB`. Carry forward choices the user already gave, and ask only for missing ones.
 
 ## Prepare the source
 
