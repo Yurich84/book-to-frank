@@ -9,16 +9,14 @@
 After the project is published on GitHub, replace `<repository-url>` with its clone URL:
 
 ```sh
-git clone <repository-url>
-mkdir -p "$HOME/.codex/skills"
-cp -R book-to-frank/book-to-frank "$HOME/.codex/skills/book-to-frank"
+git clone <repository-url> "$HOME/.codex/skills/book-to-frank"
 ```
 
-If you already cloned this repository, run the `mkdir` and `cp` commands from its root directory. Restart or refresh Codex if the new skill does not appear.
+If you already cloned this repository elsewhere, copy its `SKILL.md` into `~/.codex/skills/book-to-frank/`. Restart or refresh Codex if the new skill does not appear.
 
 ### Manual install
 
-Copy the `book-to-frank` skill folder into `~/.codex/skills/`:
+Create `~/.codex/skills/book-to-frank/` and copy the repository's `SKILL.md` there:
 
 ```text
 ~/.codex/skills/book-to-frank/SKILL.md
