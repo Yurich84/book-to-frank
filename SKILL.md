@@ -41,6 +41,8 @@ Before generating the final book, confirm that a title page exists. If the sourc
 
 Assemble the separate title page, translated sections in source order, and local images into the requested format:
 
+- Make the title page fill an entire page in every paginated output. When an illustration is the only content on its page, make it fill that page as well. Scale images to cover the page while preserving their aspect ratio; crop excess edges only as needed.
+
 - **Markdown:** deliver the assembled `.md` file and its image assets together, with working relative image links.
 - **EPUB:** create a valid EPUB with the title page, section order, headings, inline formatting, and embedded illustrations intact.
 - **PDF:** create a readable PDF with the title page, section order, headings, inline formatting, and illustrations intact.
