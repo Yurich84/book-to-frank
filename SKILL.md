@@ -15,7 +15,7 @@ Use the supplied link or attachment as the source. Check that it is accessible a
 2. **Translation language:** suggest the language the user usually writes in during the conversation, when clear; allow another language.
 3. **Output:** EPUB, Markdown, or PDF.
 
-Present unanswered choices together in one compact interaction. Use the environment's structured choice UI (for example, selectable options with a free-text choice) when available. Make each pairing and output option directly selectable. For language, offer the suggested language and a way to enter another. If no choice UI is available, show a numbered menu and let the user answer in one line, such as `1) sentence 2) Ukrainian 3) EPUB`. Carry forward choices the user already gave, and ask only for missing ones.
+Present unanswered choices together in one compact interaction. Use the environment's structured choice UI (for example, selectable options with a free-text choice) when available. Make each pairing and output option directly selectable. For language, offer the suggested language and a way to enter another. If no choice UI is available, show a numbered menu and let the user answer in one line, such as `1) sentence 2) Ukrainian 3) EPUB`. Carry forward choices the user already gave, and ask only for missing ones. Ask about each choice only once; do not repeat a choice in a later message using different wording. If the user asks what a choice means, explain the options without asking for that choice again unless they still need to select it.
 
 ## Prepare the source
 
