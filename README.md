@@ -9,7 +9,7 @@
 After the project is published on GitHub, replace `<repository-url>` with its clone URL:
 
 ```sh
-git clone <repository-url> "$HOME/.codex/skills/book-to-frank"
+git clone https://github.com/Yurich84/book-to-frank.git "$HOME/.codex/skills/book-to-frank"
 ```
 
 If you already cloned this repository elsewhere, copy its `SKILL.md` into `~/.codex/skills/book-to-frank/`. Restart or refresh Codex if the new skill does not appear.
