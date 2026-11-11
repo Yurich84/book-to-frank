@@ -6,21 +6,33 @@
 
 ### Install from this repository
 
-After the project is published on GitHub, replace `<repository-url>` with its clone URL:
+Install the skill for your user account by cloning the repository into Codex's global skills folder:
 
 ```sh
-git clone https://github.com/Yurich84/book-to-frank.git "$HOME/.codex/skills/book-to-frank"
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
+git clone https://github.com/Yurich84/book-to-frank.git "${CODEX_HOME:-$HOME/.codex}/skills/book-to-frank"
 ```
 
-If you already cloned this repository elsewhere, copy its `SKILL.md` into `~/.codex/skills/book-to-frank/`. Restart or refresh Codex if the new skill does not appear.
+If `CODEX_HOME` is set, Codex uses that directory instead of `~/.codex`.
 
 ### Manual install
 
-Create `~/.codex/skills/book-to-frank/` and copy the repository's `SKILL.md` there:
+From the repository root, copy `SKILL.md` into the user-level skills folder:
 
-```text
-~/.codex/skills/book-to-frank/SKILL.md
+```sh
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills/book-to-frank"
+cp SKILL.md "${CODEX_HOME:-$HOME/.codex}/skills/book-to-frank/SKILL.md"
 ```
+
+## Update the global install
+
+If you installed by cloning the repository, update it from a terminal with:
+
+```sh
+git -C "${CODEX_HOME:-$HOME/.codex}/skills/book-to-frank" pull --ff-only origin main
+```
+
+If you installed manually, copy the newer `SKILL.md` over the installed file. Codex detects skill changes automatically; restart Codex if the updated version does not appear.
 
 ## Use
 
@@ -30,7 +42,7 @@ Invoke the skill with a link to an accessible book or attach the book file:
 $book-to-frank https://example.com/book
 ```
 
-The skill asks how to pair source and translation (3–5 words, 5–10 words, sentences, or paragraphs), the target language, and the output format (EPUB, Markdown, or PDF). It then prepares ordered section files, processes each section with a separate agent when delegation is available, and assembles the final book. If the source has no title page, it requests one before generating the final output.
+The skill offers selectable choices for pairing size (3–5 words, 5–10 words, sentences, or paragraphs), target language, and output format (EPUB, Markdown, or PDF) when the chat interface supports them. Otherwise, it presents a compact numbered menu. It then prepares ordered section files, processes each section with a separate agent when delegation is available, and assembles the final book. If the source has no title page, it requests one before generating the final output.
 
 ## Workflow notes
 
