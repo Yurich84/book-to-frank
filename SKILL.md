@@ -22,10 +22,12 @@ Present unanswered choices together in one compact interaction, using the host a
 1. Extract the book's text and assets with tools suited to its format. For a web link, use the linked book only if its content can be accessed; if access is blocked, ask for an upload or accessible copy.
 2. Identify the title page and the boundaries of the actual book text. Keep the title page as a separate source file or asset. Include literary content such as a preface or introduction when it belongs to the book. Exclude tables of contents, glossaries, indexes, publisher material, explanatory notes that are not part of the prose, and other supplementary matter at the beginning or end.
 3. Preserve meaningful headings, bold, italics, paragraph breaks, and illustrations. Save each image locally with a stable relative path and retain its position/reference in the Markdown. Reflow text naturally: do not preserve line wrapping or hyphenation caused by the source page layout.
-4. Split the main text into ordered Markdown files, preferably one per chapter or named section. When the source has no usable chapter or section divisions, split it into blocks of about 10 source pages. Keep headings and page order intact, and record the source page range for each block when available.
+4. Split the main text into ordered Markdown files, preferably one per chapter or named section. When the source has no usable chapter or section divisions, split it into blocks of about 10 source pages. Treat that page count as a target: place each boundary at the nearest sentence ending, allowing modest variation in block length. If a sentence crosses the target, keep the whole sentence in one block and move the boundary through its ending. Keep headings and page order intact, and record the source page range for each block when available.
 5. Save working files in a clear project directory, for example `source/`, `sections/`, `images/`, and `output/`. Keep the title page separate from the section files so it can be checked before assembly.
 
-The preparation step is complete when all main-text content is represented once, in order, across the section files; excluded supplementary material is absent; and every referenced illustration resolves to a saved image.
+After splitting, inspect the first and last prose passage in every section file. Move a complete sentence across a boundary when needed so each file starts and ends cleanly; preserve headings and paragraph structure. Then verify that the files still contain all main-text content exactly once and in order, with no gaps or duplicated passages. If the source has unreliable sentence punctuation, use complete paragraph endings as boundaries instead.
+
+The preparation step is complete when all main-text content is represented once, in order, across the section files; every file boundary ends at a complete sentence or paragraph; excluded supplementary material is absent; and every referenced illustration resolves to a saved image.
 
 ## Translate each section
 
@@ -33,7 +35,7 @@ Process each section file with a separate worker agent when the host environment
 
 Run section workers independently when agent delegation is available. Each worker returns its completed section as a separate Markdown file, keeping the same filename and order. Keep a short shared glossary of names and recurring terms and pass updates to later workers. When working sequentially, maintain the same glossary and checks across sections. Describe delegation accurately; never imply that workers were used if the host does not support them.
 
-After all workers finish, check every section for completeness and assembly readiness: all original passages remain, each has exactly one adjacent translation in the chosen language and format, section order and headings are preserved, and image links still resolve. Resolve omissions or inconsistent formatting with the responsible worker before assembling.
+After all workers finish, check every section for completeness and assembly readiness: all original passages remain, each has exactly one adjacent translation in the chosen language and format, section order and headings are preserved, and image links still resolve. Check the first and last source passage in each file against its translation to confirm that boundary sentences are complete on both sides. Resolve omissions or inconsistent formatting with the responsible worker before assembling.
 
 ## Assemble and deliver
 
