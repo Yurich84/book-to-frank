@@ -42,6 +42,7 @@ Before generating the final book, confirm that a title page exists. If the sourc
 Assemble the separate title page, translated sections in source order, and local images into the requested format:
 
 - Make the title page fill an entire page in every paginated output. When an illustration is the only content on its page, make it fill that page as well. Scale images to cover the page while preserving their aspect ratio; crop excess edges only as needed.
+- For EPUB title pages, account for e-reader differences: `100vw` and `100vh` alone may be ignored or constrained by reader margins. Set zero page margins (for example, `@page { margin: 0; }` and reset the title page's `html` and `body` margins), give the cover an explicit viewport matching its dimensions, and size it to fill that viewport. If reflowable CSS does not produce a full-page cover on the target readers, mark only the title-page spine item as pre-paginated and include the XHTML viewport metadata; keep the rest of the book reflowable. Verify the EPUB package metadata and title-page XHTML after assembly.
 
 - **Markdown:** deliver the assembled `.md` file and its image assets together, with working relative image links.
 - **EPUB:** create a valid EPUB with the title page, section order, headings, inline formatting, and embedded illustrations intact.
