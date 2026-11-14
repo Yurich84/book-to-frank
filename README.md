@@ -52,10 +52,10 @@ If you installed manually, copy the newer `SKILL.md` over the installed file. Fo
 
 ## Use
 
-Invoke the skill with a link to an accessible book or attach the book file:
+Invoke the skill with a link to an accessible book or attach the book file (txt, doc, pdf, etc.):
 
 ```text
-$book-to-frank https://example.com/book
+$book-to-frank path/to/book
 ```
 
 The skill collects pairing size (3–5 words, 5–10 words, sentences, or paragraphs), target language, and output format (EPUB, Markdown, or PDF), using the host's choice UI when available or a compact numbered menu otherwise. It prepares ordered section files, uses separate agents when delegation is available, and otherwise processes sections sequentially. If the source has no title page, it requests one before generating the final output.
